@@ -1,0 +1,27 @@
+<mat-toolbar>
+    Responsive sidebar
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav="matSidenav">
+        <div *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <p *ngIf="sidenav.opened">
+                X
+            </p>
+        
+        </div>
+        Hello
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                <a *ngIf="!sidenav.opened">
+                    abrir
+                </a>
+            </button>
+            Main content
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
